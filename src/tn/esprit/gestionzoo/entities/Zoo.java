@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
     private String name;
     private String city;
@@ -21,7 +23,7 @@ public class Zoo {
         }
         else {System.out.println("le nom doit etre non vide");}
     }
-    void displayZoo(){
+    public void displayZoo(){
         System.out.println("Name: " + name +" "+"City: "+city+" "+"Number of cages: "+nbrCages);
         System.out.println("Animals in the zoo:");
 

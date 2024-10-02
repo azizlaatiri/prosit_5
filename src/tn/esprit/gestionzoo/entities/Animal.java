@@ -1,3 +1,4 @@
+package tn.esprit.gestionzoo.entities;
 public class Animal {
     String family;
     String name;
@@ -12,7 +13,7 @@ public class Animal {
         }
         else {System.out.println("il faut un age positif");}
     }
-    void displayAnimal(){
+    public void displayAnimal(){
         System.out.println("Name: " + name +" "+"Family: "+family+" "+"Age: "+age+ "isMAmmal: "+isMammal);
     }
     @Override
