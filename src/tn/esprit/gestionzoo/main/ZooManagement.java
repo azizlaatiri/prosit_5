@@ -1,12 +1,22 @@
 package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.Animal;
 import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Aquatiques;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
+import tn.esprit.gestionzoo.entities.Terrestre;
+
+
+
+
 
 public class ZooManagement {
 
 
 
     public static void main(String[] args ){
+
+
 
         Animal lion = new Animal("chat","Simba",9,false);
         // lion.family= "Felidae";
@@ -47,11 +57,24 @@ public class ZooManagement {
         } else {
             System.out.println("The zoo is not full.");
         }
+        Dolphin dolphin = new Dolphin("mmm", "ddd", 8, true, "lk", 15);
+        Penguin penguin = new Penguin("ssss", "ffff", 3, false, "lk", 30);
+        Aquatiques Aqua = new Aquatiques("mmm", "ddd", 8, true, "lk");
+        Terrestre Terrrsta = new Terrestre("ssss", "ffff", 3, false, 87);
+
+
+        dolphin.displayAnimal();
+        penguin.displayAnimal();
+        Aqua.displayAnimal();
+        Terrrsta.displayAnimal();
+        dolphin.swim();
+        Aqua.swim();
 
 
 
 
     }
+
 
 
 }
