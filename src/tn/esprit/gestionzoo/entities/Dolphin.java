@@ -7,6 +7,7 @@ public class Dolphin extends Aquatiques {
         super(family, name, age, isMammal, habitat);
         this.swimmingSpeed = swimmingSpeed;
     }
+    @Override
     public void displayAnimal() {
         super.displayAnimal();
         System.out.println("Swimming Speed: " + swimmingSpeed );

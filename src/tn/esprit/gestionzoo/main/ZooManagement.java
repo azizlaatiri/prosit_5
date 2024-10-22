@@ -59,16 +59,35 @@ public class ZooManagement {
         }
         Dolphin dolphin = new Dolphin("mmm", "ddd", 8, true, "lk", 15);
         Penguin penguin = new Penguin("ssss", "ffff", 3, false, "lk", 30);
-        Aquatiques Aqua = new Aquatiques("mmm", "ddd", 8, true, "lk");
         Terrestre Terrrsta = new Terrestre("ssss", "ffff", 3, false, 87);
+        Aquatiques fish = new Penguin("Bird", "Fish", 8, true, "Ocean", 20.0f); // Exemple d'un pingouin
+        Aquatiques shark = new Dolphin("Fish", "Shark", 8, false, "Sea", 100.0f); // Exemple d'un requin
+        Aquatiques fish1 = new Penguin("Bird", "Penguin1", 5, true, "Antarctic", 20.0f);
+        Aquatiques fish2 = new Penguin("Bird", "Penguin1", 5, true, "Antarctic", 20.0f);
+        Aquatiques fish3 = new Penguin("Bird", "Penguin2", 3, true, "Antarctic", 25.0f);
+        myZoo.addAquaticAnimal(dolphin);
+        myZoo.addAquaticAnimal(shark);
+
+
 
 
         dolphin.displayAnimal();
         penguin.displayAnimal();
-        Aqua.displayAnimal();
         Terrrsta.displayAnimal();
         dolphin.swim();
-        Aqua.swim();
+        myZoo.addAquaticAnimal(fish);
+        myZoo.addAquaticAnimal(fish1);
+        myZoo.addAquaticAnimal(fish2);
+        myZoo.addAquaticAnimal(fish3);
+        myZoo.addAquaticAnimal(penguin);
+
+        myZoo.makeAquaticAnimalsSwim();
+        float maxDepth = myZoo.maxPenguinSwimmingDepth();
+        System.out.println("The maximum swimming depth of the penguins is: " + maxDepth + " meters.");
+        myZoo.displayNumberOfAquaticsByType();
+        System.out.println(fish1.equals(fish2)); 
+        System.out.println(fish1.equals(fish3));
+
 
 
 
