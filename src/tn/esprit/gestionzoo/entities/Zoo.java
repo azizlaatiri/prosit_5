@@ -3,7 +3,7 @@ package tn.esprit.gestionzoo.entities;
 public class Zoo {
     private String name;
     private String city;
-    private final int nbrCages = 25;
+    private final int nbrCages = 10;
     private Animal[] animals;
     private int nbrAnimals;
 
@@ -69,18 +69,26 @@ public class Zoo {
         return nbrAquaticAnimals >= aquaticAnimals.length;
     }
 
-    public boolean AddAnimal(Animal animal) {
-        if (searchAnimal(animal) != -1) {
-            return false;
-        }
-        if (isZooFull()) {
-            return false;
+    public void AddAnimal(Animal animal) throws ZooFullException {
+        if (nbrAnimals >= nbrCages) {
+            throw new ZooFullException("The zoo is full! Cannot add more animals.");
         }
 
+        // Vérifier si l'animal est déjà dans le zoo
+        if (searchAnimal(animal) != -1) {
+            System.out.println("Animal already exists in the zoo.");
+            return;
+        }
+
+        // Ajouter l'animal à la liste des animaux
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
+
+        System.out.println("Animal added successfully: " + animal.getName());
+        System.out.println("Number of animals in the zoo: " + nbrAnimals);
     }
+
+
     public void makeAquaticAnimalsSwim() {
         for (int i = 0; i < nbrAquaticAnimals; i++) {
             if (aquaticAnimals[i] != null) {
