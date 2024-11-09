@@ -1,12 +1,22 @@
 package tn.esprit.gestionzoo.entities;
 
-// Déclaration de la classe Aquatiques comme abstraite
-public abstract class Aquatiques extends Animal {
+import tn.esprit.gestionzoo.enums.Food;
+import tn.esprit.gestionzoo.interfaces.Carnivore;
+
+public abstract class Aquatiques extends Animal implements Carnivore<Food> {
     private String habitat;
 
     public Aquatiques(String family, String name, int age, boolean isMammal, String habitat) {
         super(family, name, age, isMammal);
         this.habitat = habitat;
+    }
+    @Override
+    public void eatMeat(Food meat) {
+        if (meat == Food.MEAT) {
+            System.out.println(name + " (aquatic animal) eats meat.");
+        } else {
+            System.out.println(name + " (aquatic animal) does not eat this type of food.");
+        }
     }
 
     // Méthode abstraite swim()
